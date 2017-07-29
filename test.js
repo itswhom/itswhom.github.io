@@ -109,6 +109,7 @@ function aAn(vari, id) {
 
 function combatInit() {		// initialize combat with default values
 	// set combat window in #sectionMiddle
+	console.log('Function combatInit just ran holy shit')
 	document.getElementById('currentScreen').innerHTML =  '<div id="action"></div><div id="playerTarget"></div><div id="combatFlavorText"></div>';
 
 	// roll to see which enemy appears, equal chances
@@ -116,16 +117,21 @@ function combatInit() {		// initialize combat with default values
 	// display information about enemy in main window
 	document.getElementById('action').innerHTML = '<span>you are fighting ' + aAn(enemyName, currentEnemyID) + '</span>';
 	document.getElementById('playerTarget').innerHTML = showEnemyName(currentEnemyID) + ".";
+	console.log('INSIDE COMBATINIT')
 	document.getElementById('combatFlavorText').innerHTML = '<span>' + enemyFlavorText[currentEnemyID] + '</span>';
 	document.getElementById('leftNavButtons').innerHTML = '' 
 		+ '<button class="thebutton" id="attack">attack.</button><br/>'
 		+ '<button class="thebutton" id="defend">defend.</button><br/>'
 		+ '<button class="thebutton" id="abscond">abscond.</button><br/>'
 		+ '<button class="thebutton" id="reinit">re-init.</button>';
+	
+	// trying silvio's idea to put this line inside the combatInit functio'n[0]
+	// looks like it worked <=[
+	document.getElementById("reinit").onclick = combatInit;
 };
 
 // the only thing done in this right now
 combatInit();
 
 // get clicks and reinit if reinit
-document.getElementById("reinit").onclick = combatInit();
+
