@@ -1,7 +1,5 @@
 itswhom.github.io
 
-This is a little game I'm throwing together to finally learn some JavaScript, HTML, and CSS.
-
-Hopefully I'll learn a lot about git, too.
+This was my first attempt at a game to learn some JavaScript, HTML, and CSS.
 
 [link](https://itswhom.github.io/)
